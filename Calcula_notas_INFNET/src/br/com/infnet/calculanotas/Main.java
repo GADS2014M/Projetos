@@ -6,11 +6,11 @@ public class Main {
 
 	/**
 	 * @author Josinaldo Albuquerque Barbosa
-	 * @turma  GADS2014M
-	 * @colaboradores
+	 * turma:  GADS2014M
+	 * colaboradores: 
 	 */
 
-	// Vers√£o do programa
+	// Vers„o do programa
 	public static float getVersao(){
 		return (float) 1.0;
 	}
@@ -28,10 +28,11 @@ public class Main {
 		// Nota av3 (OBS: tem que ser 0 caso sem nota)
 		int av3		= 0;
 		
-		// M√©dias de aprova√ß√£o
+		// MÈdias de aprovaÁ„o
 		int aprovacaoCP = 60; // CP = av1 e av2
 		int aprovacaoPF = 50; // PF = av1, av2 e av3
 		
+		// Verifica dados
 		if((Validacao.valida0a100(av1)	   == true) &&
 		   (Validacao.valida0a100(pesoAv1) == true) &&
 		   (Validacao.valida0a100(av2)	   == true) &&
@@ -42,10 +43,10 @@ public class Main {
 			int resultado = Funcoes.calculaNota(av1, pesoAv1, av2, pesoAv2, av3);
 			// Status da nota(Aprovado ou Reprovado)
 			String status = Funcoes.calculaStatus(av3, resultado, aprovacaoCP, aprovacaoPF);
-			// Exibe alerta com as informa√ß√µes
-			JOptionPane.showMessageDialog(null, "Vers√£o cod.: " + getVersao() + "\n" + "Resultado: " + resultado + "\n" + "Aluno: " + status);
+			// Exibe alerta com as informaÁıes
+			JOptionPane.showMessageDialog(null, "Vers„o cod.: " + getVersao() + "\n" + "Resultado: " + resultado + "\n" + "Aluno: " + status);
 		}else{
-			// Algum dado n√£o passo na valida√ß√£o
+			// Algum dado n„o passo na validaÁ„o
 			JOptionPane.showMessageDialog(null, "Erro dados.");
 		}
 		
