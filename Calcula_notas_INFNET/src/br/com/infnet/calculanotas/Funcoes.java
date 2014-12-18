@@ -24,13 +24,13 @@ public class Funcoes {
 	public static String calculaStatus(int av3, int nota, int aprovacaoCP, int aprovacaoPF){
 		// Nota de aprovação muda caso esteja em av3
 		if(av3 == 0){
-			if(nota > aprovacaoCP){
+			if(nota >= aprovacaoCP){
 				return "Aprovado";
 			}else{
 				return "Reprovado";
 			}
 		}else{
-			if(nota > aprovacaoPF){
+			if(nota >= aprovacaoPF){
 				return "Aprovado";
 			}else{
 				return "Reprovado";

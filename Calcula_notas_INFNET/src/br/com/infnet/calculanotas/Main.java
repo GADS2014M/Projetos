@@ -23,7 +23,7 @@ public class Main {
 		int av1 	= 90;
 		int pesoAv1	= 30;
 		// Nota e peso av2
-		int av2		= 60;
+		int av2		= 48;
 		int pesoAv2	= 70;
 		// Nota av3 (OBS: tem que ser 0 caso sem nota)
 		int av3		= 0;
