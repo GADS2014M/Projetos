@@ -10,7 +10,7 @@ public class Main {
 	 * @colaboradores
 	 */
 
-	// Vers„o do programa
+	// Vers√£o do programa
 	public static float getVersao(){
 		return (float) 1.0;
 	}
@@ -21,14 +21,14 @@ public class Main {
 		
 		// Nota e peso av1
 		int av1 	= 90;
-		int pesoAv1 = 30;
+		int pesoAv1	= 30;
 		// Nota e peso av2
 		int av2		= 60;
-		int pesoAv2 = 70;
+		int pesoAv2	= 70;
 		// Nota av3 (OBS: tem que ser 0 caso sem nota)
 		int av3		= 0;
 		
-		// MÈdias de aprovaÁ„o
+		// M√©dias de aprova√ß√£o
 		int aprovacaoCP = 60; // CP = av1 e av2
 		int aprovacaoPF = 50; // PF = av1, av2 e av3
 		
@@ -42,10 +42,10 @@ public class Main {
 			int resultado = Funcoes.calculaNota(av1, pesoAv1, av2, pesoAv2, av3);
 			// Status da nota(Aprovado ou Reprovado)
 			String status = Funcoes.calculaStatus(av3, resultado, aprovacaoCP, aprovacaoPF);
-			// Exibe alerta com as informaÁıes
-			JOptionPane.showMessageDialog(null, "Vers„o cod.: " + getVersao() + "\n" + "Resultado: " + resultado + "\n" + "Aluno: " + status);
+			// Exibe alerta com as informa√ß√µes
+			JOptionPane.showMessageDialog(null, "Vers√£o cod.: " + getVersao() + "\n" + "Resultado: " + resultado + "\n" + "Aluno: " + status);
 		}else{
-			// Algum dado n„o passo na validaÁ„o
+			// Algum dado n√£o passo na valida√ß√£o
 			JOptionPane.showMessageDialog(null, "Erro dados.");
 		}
 		
