@@ -14,6 +14,11 @@ public class Main {
 	public static float getVersao(){
 		return (float) 1.0;
 	}
+	
+	// Criadores
+	public static String getCriadores(){
+		return "Josinaldo A.Barbosa";
+	}
 
 	public static void main(String[] args) {
 
