@@ -1,39 +1,69 @@
 package br.com.infnet.calculanotas;
 
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
 public class Funcoes {
 
 	/* Funções do programa */
 
 	// Calcula nota
-	public static int calculaNota(int av1, int pesoAv1, int av2, int pesoAv2, int av3){
-		// Aplica peso na av1
-		av1 = (int) (av1 * ((float) pesoAv1 / 100));
-		// Aplica peso na av2
-		av2 = (int) (av2 * ((float) pesoAv2 / 100));
-		// Calcula resultado
-		if(av3 == 0){
-			// Não fez av3
-			return av1 + av2;
+	public static float calculaNota(int av1, int pesoAv1, int av2, int pesoAv2, int av3){
+		int naoFez	   = -1;
+		int notaMinima = 0;
+
+		/* Possibilidades */
+		if(av3 == naoFez && av1 >= notaMinima && av2 >= notaMinima){
+			// av1 + av2
+			return aplicaPeso(av1, pesoAv1) + aplicaPeso(av2, pesoAv2);
+		}else if(av1 == naoFez && av2 == naoFez){
+			// Somente av3
+			return av3;
+		}else if(av1 == naoFez){
+			// av2 + av3(recebe o peso da av1)
+			// Caso av3 for vazio(-1), recebe zero
+			if(av3 == -1){
+				av3 = 0;
+			}
+			return aplicaPeso(av2, pesoAv2) + aplicaPeso(av3, pesoAv1);
+		}else if(av2 == naoFez){
+			// av1 + av3
+			// Caso av3 for vazio(-1), recebe zero
+			if(av3 == -1){
+				av3 = 0;
+			}
+			return aplicaPeso(av1, pesoAv1) + aplicaPeso(av3, pesoAv2);
 		}else{
-			// Fez av3
-			return ((av1 + av2) + av3) / 2;
+			// av1 + av2 + av3
+			return (((aplicaPeso(av1, pesoAv1) + aplicaPeso(av2, pesoAv2)) + av3) / 2);
 		}
 	}
 
-	// Calcula status
-	public static String calculaStatus(int av3, int nota, int aprovacaoCP, int aprovacaoPF){
-		// Nota de aprovação muda caso esteja em av3
-		if(av3 == 0){
-			if(nota >= aprovacaoCP){
-				return "Aprovado";
+	// Aplica peso
+	private static float aplicaPeso(int valor, int peso){
+		return (valor * ((float) peso / 100));
+	}
+
+	// Calcula status (Aprovado ou Reprovado)
+	public static void calculaStatus(int nota, int av3, int aprovacaoSemAv3, int aprovacaoComAv3, JLabel txResultadoStatus){
+		if(av3 == -1){
+			// Não fez av3
+			if(nota >= aprovacaoSemAv3){
+				txResultadoStatus.setForeground(Color.GREEN);
+				txResultadoStatus.setText("Aprovado");
 			}else{
-				return "Reprovado";
+				txResultadoStatus.setForeground(Color.RED);
+				txResultadoStatus.setText("Reprovado");
 			}
 		}else{
-			if(nota >= aprovacaoPF){
-				return "Aprovado";
+			// Fez av3
+			if(nota >= aprovacaoComAv3){
+				txResultadoStatus.setForeground(Color.GREEN);
+				txResultadoStatus.setText("Aprovado");
 			}else{
-				return "Reprovado";
+				txResultadoStatus.setForeground(Color.RED);
+				txResultadoStatus.setText("Reprovado");
 			}
 		}
 	}
