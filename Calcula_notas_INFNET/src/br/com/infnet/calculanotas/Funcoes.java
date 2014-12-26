@@ -6,11 +6,11 @@ import javax.swing.JLabel;
 
 public class Funcoes {
 
-	/* Funções do programa */
+	/* FunÃ§Ãµes do programa */
 
 	// Calcula nota
 	public static float calculaNota(int av1, int pesoAv1, int av2, int pesoAv2, int av3){
-		final int naoFez	 = -1;
+		final int naoFez     = -1;
 		final int notaMinima = 0;
 
 		/* Possibilidades */
@@ -48,7 +48,7 @@ public class Funcoes {
 	// Calcula status (Aprovado ou Reprovado)
 	public static void calculaStatus(int nota, int av3, int aprovacaoSemAv3, int aprovacaoComAv3, JLabel txResultadoStatus){
 		if(av3 == -1){
-			// Não fez av3
+			// NÃ£o fez av3
 			if(nota >= aprovacaoSemAv3){
 				txResultadoStatus.setForeground(Color.GREEN);
 				txResultadoStatus.setText("Aprovado");
