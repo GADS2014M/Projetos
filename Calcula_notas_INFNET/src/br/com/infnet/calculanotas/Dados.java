@@ -2,23 +2,23 @@ package br.com.infnet.calculanotas;
 
 public class Dados {
 
-	/* Dados em memÛria do programa */
+	/* Dados em mem√≥ria do programa */
 
-	// Valores padr„o (quando iniciado o programa)
-	private final int pesoAv1P		 	= 30;
-	private final int pesoAv2P		 	= 70;
-	private final int aprovacaoSemAv3P	= 60;
-	private final int aprovacaoComAv3P	= 50;
+	// Valores padr√£o (quando iniciado o programa)
+	private final int pesoAv1P	      = 30;
+	private final int pesoAv2P	      = 70;
+	private final int aprovacaoSemAv3P    = 60;
+	private final int aprovacaoComAv3P    = 50;
 	private final boolean arredondamentoP = true;
 
-	// Valores que podem alterar(configuraÁıes)
-	private int pesoAv1			   = pesoAv1P;
-	private int pesoAv2			   = pesoAv2P;
-	private int aprovacaoSemAv3	   = aprovacaoSemAv3P;
-	private int aprovacaoComAv3	   = aprovacaoComAv3P;
+	// Valores que podem alterar(configura√ß√µes)
+	private int pesoAv1	       = pesoAv1P;
+	private int pesoAv2	       = pesoAv2P;
+	private int aprovacaoSemAv3    = aprovacaoSemAv3P;
+	private int aprovacaoComAv3    = aprovacaoComAv3P;
 	private boolean arredondamento = arredondamentoP;
 
-	// Pega dados padr„o
+	// Pega dados padr√£o
 	public static Dados getDadosP(){
 		Dados dados = new Dados();
 		dados.getPesoAv1P();
