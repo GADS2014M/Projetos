@@ -10,8 +10,8 @@ public class Funcoes {
 
 	// Calcula nota
 	public static float calculaNota(int av1, int pesoAv1, int av2, int pesoAv2, int av3){
-		int naoFez	   = -1;
-		int notaMinima = 0;
+		final int naoFez	 = -1;
+		final int notaMinima = 0;
 
 		/* Possibilidades */
 		if(av3 == naoFez && av1 >= notaMinima && av2 >= notaMinima){

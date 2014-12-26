@@ -23,17 +23,19 @@ import java.awt.event.KeyEvent;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.net.URL;
 import javax.swing.JButton;
 
 public class TelaPrincipal extends JFrame {
-	private JTextField edAv1;
-	private JTextField edAv2;
-	private JTextField edAv3;
-	private JLabel txResultadoNota;
-	private JLabel txResultadoStatus;
+	// Serial default(não sei usar ainda)
+	private static final long serialVersionUID = 1L;
+	private static JTextField edAv1;
+	private static JTextField edAv2;
+	private static JTextField edAv3;
+	private static JLabel txResultadoNota;
+	private static JLabel txResultadoStatus;
+	public  static Dados dados = Dados.getDadosP();
 
-	private void calculaNota(){
+	public static void calculaNota(){
 		// Limpa nota
 		txResultadoNota.setText("");
 
@@ -52,7 +54,6 @@ public class TelaPrincipal extends JFrame {
 
 		// Calcula caso um estiver preechido
 		if(Validacao.verificaTodosVazios(av1, av2, av3) == false){
-			Dados dados = new Dados();
 			int nota;
 			// Verifica arredondamento
 			if(dados.getArredondamento() == true){
@@ -67,9 +68,6 @@ public class TelaPrincipal extends JFrame {
 			// Calcula status
 			Funcoes.calculaStatus(nota, av3, dados.getAprovacaoSemAv3(), dados.getAprovacaoComAv3(), txResultadoStatus);
 		}
-
-		/* não salva edição na classe configurações */
-		/* pag informações */
 	}
 
 	/**
@@ -232,9 +230,9 @@ public class TelaPrincipal extends JFrame {
 		txResultadoStatus.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txResultadoStatus.setBounds(105, 169, 80, 21);
 		panelNotasMateria.add(txResultadoStatus);
-		
-		JButton btnNewButton = new JButton("Limpar");
-		btnNewButton.addActionListener(new ActionListener() {
+
+		JButton btLimpar = new JButton("Limpar");
+		btLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// Limpa tudo
 				edAv1.setText("");
@@ -242,10 +240,12 @@ public class TelaPrincipal extends JFrame {
 				edAv3.setText("");
 				txResultadoNota.setText("");
 				txResultadoStatus.setText("");
+				// Foca o primeiro campo
+				edAv1.requestFocus();
 			}
 		});
-		btnNewButton.setBounds(22, 203, 165, 30);
-		panelNotasMateria.add(btnNewButton);
+		btLimpar.setBounds(22, 203, 165, 30);
+		panelNotasMateria.add(btLimpar);
 
 	}
 }
