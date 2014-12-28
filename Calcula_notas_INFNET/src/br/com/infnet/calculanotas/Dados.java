@@ -11,7 +11,7 @@ public class Dados {
 	private final int aprovacaoComAv3P    = 50;
 	private final boolean arredondamentoP = true;
 
-	// Valores que podem alterar(configurações)
+	// Valores que podem ser alterados(configurações)
 	private int pesoAv1	       = pesoAv1P;
 	private int pesoAv2	       = pesoAv2P;
 	private int aprovacaoSemAv3    = aprovacaoSemAv3P;
