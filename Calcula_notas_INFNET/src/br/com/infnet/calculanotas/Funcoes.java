@@ -14,10 +14,10 @@ public class Funcoes {
 		final int notaMinima = 0;
 
 		/* Possibilidades */
-		if(av3 == naoFez && av1 >= notaMinima && av2 >= notaMinima){
+		if((av3 == naoFez) && (av1 >= notaMinima) && (av2 >= notaMinima)){
 			// av1 + av2
 			return aplicaPeso(av1, pesoAv1) + aplicaPeso(av2, pesoAv2);
-		}else if(av1 == naoFez && av2 == naoFez){
+		}else if((av1 == naoFez) && (av2 == naoFez)){
 			// Somente av3
 			return av3;
 		}else if(av1 == naoFez){
