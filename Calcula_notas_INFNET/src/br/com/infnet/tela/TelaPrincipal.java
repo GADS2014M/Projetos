@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 public class TelaPrincipal extends JFrame {
-	// Serial default(n„o sei usar ainda)
+	// Serial default(n√£o sei usar ainda)
 	private static final long serialVersionUID = 1L;
 	private static JTextField edAv1;
 	private static JTextField edAv2;
@@ -42,12 +42,12 @@ public class TelaPrincipal extends JFrame {
 		// Limpa resultado
 		txResultadoStatus.setText("");
 
-		// Cria e verifica vari·veis
+		// Cria e verifica vari√°veis
 		int av1 = Validacao.verificaSeFez(edAv1);
 		int av2 = Validacao.verificaSeFez(edAv2);
 		int av3 = Validacao.verificaSeFez(edAv3);
 
-		// Verifica se ultrapassa 100(nota m·xima)
+		// Verifica se ultrapassa 100(nota m√°xima)
 		Validacao.verificaLimiteNota(av1, edAv1);
 		Validacao.verificaLimiteNota(av2, edAv2);
 		Validacao.verificaLimiteNota(av3, edAv3);
@@ -57,7 +57,7 @@ public class TelaPrincipal extends JFrame {
 			int nota;
 			// Verifica arredondamento
 			if(dados.getArredondamento() == true){
-				// Calcula a nota (MÈtodo Math.round para arredondar valores)
+				// Calcula a nota (M√©todo Math.round para arredondar valores)
 				nota = Math.round(Funcoes.calculaNota(av1, dados.getPesoAv1(), av2, dados.getPesoAv2(), av3));
 			}else{
 				// Calcula a nota em int sem arredondar
@@ -78,10 +78,10 @@ public class TelaPrincipal extends JFrame {
 			public void run() {
 				try {
 					TelaPrincipal frame = new TelaPrincipal();
-					// Janela visivel
-					frame.setVisible(true);
 					// Centraliza na tela
 					frame.setLocationRelativeTo(null);
+					// Janela visivel
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -121,7 +121,7 @@ public class TelaPrincipal extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				// Sobre
-				JOptionPane.showMessageDialog(null,"Vers„o: " + Sobre.getVersao() + "\n" + "Criado por: " + Sobre.getCriadores());
+				JOptionPane.showMessageDialog(null,"Vers√£o: " + Sobre.getVersao() + "\n" + "Criado por: " + Sobre.getCriadores());
 			}
 		});
 
