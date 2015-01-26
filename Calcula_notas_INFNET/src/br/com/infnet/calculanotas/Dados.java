@@ -5,15 +5,15 @@ public class Dados {
 	/* Dados em memória do programa */
 
 	// Valores padrão (quando iniciado o programa)
-	private final int pesoAv1P	      = 30;
-	private final int pesoAv2P	      = 70;
+	private final int pesoAv1P	     	  = 30;
+	private final int pesoAv2P	     	  = 70;
 	private final int aprovacaoSemAv3P    = 60;
 	private final int aprovacaoComAv3P    = 50;
 	private final boolean arredondamentoP = true;
 
 	// Valores que podem ser alterados(configurações)
-	private int pesoAv1	       = pesoAv1P;
-	private int pesoAv2	       = pesoAv2P;
+	private int pesoAv1	     	   = pesoAv1P;
+	private int pesoAv2	      	   = pesoAv2P;
 	private int aprovacaoSemAv3    = aprovacaoSemAv3P;
 	private int aprovacaoComAv3    = aprovacaoComAv3P;
 	private boolean arredondamento = arredondamentoP;
