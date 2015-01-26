@@ -46,11 +46,11 @@ public class TelaPrincipal extends JFrame {
 		int av1 = Validacao.verificaSeFez(edAv1);
 		int av2 = Validacao.verificaSeFez(edAv2);
 		int av3 = Validacao.verificaSeFez(edAv3);
-
+		
 		// Verifica se ultrapassa 100(nota máxima)
-		Validacao.verificaLimiteNota(av1, edAv1);
-		Validacao.verificaLimiteNota(av2, edAv2);
-		Validacao.verificaLimiteNota(av3, edAv3);
+		av1 = Validacao.verificaLimiteNota(av1, edAv1);
+		av2 = Validacao.verificaLimiteNota(av2, edAv2);
+		av3 = Validacao.verificaLimiteNota(av3, edAv3);
 
 		// Calcula caso um estiver preechido
 		if(Validacao.verificaTodosVazios(av1, av2, av3) == false){
